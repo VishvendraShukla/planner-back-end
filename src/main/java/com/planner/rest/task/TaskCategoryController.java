@@ -1,8 +1,6 @@
 package com.planner.rest.task;
 
 import static com.planner.utils.configuration.Constants.ControllerMapping.TASK_CATEGORY;
-import static com.planner.utils.configuration.Constants.Urls.CREATE_TASK_CATEGORY;
-import static com.planner.utils.configuration.Constants.Urls.GET_TASK_CATEGORY;
 import static com.planner.utils.configuration.Constants.Urls.REMOVE_TASK_CATEGORY_BY_ID;
 
 import com.planner.model.TaskCategoryVO;
@@ -32,14 +30,14 @@ public class TaskCategoryController {
   @Autowired
   private TaskPermissionImpl taskPermission;
 
-  @PostMapping(CREATE_TASK_CATEGORY)
+  @PostMapping
   public ResponseEntity<Response> createTaskCategory(@RequestBody TaskCategoryVO taskCategoryVO) {
     TaskCategoryVO taskCategory = taskCategoryService.createTaskCategory(
         LoggedUser.getUser().getId(), taskCategoryVO);
     return RestAPIResponse.successResponse("Task Category Created Successfully");
   }
 
-  @GetMapping(GET_TASK_CATEGORY)
+  @GetMapping
   public ResponseEntity<Response> getTaskCategory() {
     List<TaskCategoryVO> taskCategory = taskCategoryService.fetchTaskCategoryByUserId(
         Long.valueOf(String.valueOf(LoggedUser.getUser().getId())));
