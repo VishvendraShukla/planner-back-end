@@ -13,8 +13,6 @@ public class UserCredentials {
   private String userType;
 
   public String toString() {
-    return "{\"username\":" + "\"" + this.getUsername() + "\"" + ",\"password\":" + "\""
-        + this.getPassword() + "\""
-        + ",\"userType\":" + "\"" + this.getUserType() + "\"" + "}";
+    return "{\"username\":" + "\"" + this.getUsername() + "\"" + ",\"userType\":" + "\"" + this.getUserType() + "\"" + "}";
   }
 }

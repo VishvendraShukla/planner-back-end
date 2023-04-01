@@ -72,15 +72,11 @@ public class Users extends Id {
   public String toString() {
     return "Users{" +
         "username='" + username + '\'' +
-        ", password='" + password + '\'' +
         ", isBlocked=" + isBlocked +
-        ", salt='" + salt + '\'' +
         ", modifiedDate=" + modifiedDate +
         ", creationDate=" + creationDate +
         ", lastLogin=" + lastLogin +
         ", userType=" + userType +
-        ", userDetails=" + userDetails +
-        ", roleEntities=" + roleEntities +
         '}';
   }
 
