@@ -3,7 +3,6 @@ package com.planner.rest.task;
 import static com.planner.utils.configuration.Constants.ControllerMapping.TASKS;
 import static com.planner.utils.configuration.Constants.Urls.FETCH_TASK_BY_TASK_ID;
 import static com.planner.utils.configuration.Constants.Urls.REMOVE_TASK;
-import static com.planner.utils.configuration.Constants.Urls.SAVE;
 
 import com.planner.model.CreateTaskVo;
 import com.planner.model.TaskCategoryVO;
@@ -28,7 +27,7 @@ public class TaskRestController {
   @Autowired
   private TaskService taskService;
 
-  @PostMapping(SAVE)
+  @PostMapping
   public ResponseEntity<Response> createTask(@RequestBody CreateTaskVo createTaskVo) {
     TaskCategoryVO taskCategoryVO = taskService.createTask(createTaskVo, LoggedUser.getUser());
     return RestAPIResponse.successResponse(taskCategoryVO, "Task Created Successfully");

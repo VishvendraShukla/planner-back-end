@@ -16,9 +16,9 @@ public interface Constants {
     public static final String SAVE_ADMIN_DETAILS_BY_ID = "/save/admin-details/{id}";
     public static final String FETCH_ADMIN_DETAILS_BY_ID = "/fetch/admin-details/{id}";
     public static final String CREATE_TASK_CATEGORY = "/create/category";
-    public static final String FETCH_TASK_BY_TASK_ID = "/get/{taskId}/by/{taskCategoryId}";
-    public static final String REMOVE_TASK_CATEGORY_BY_ID = "/delete-category/{taskCategoryId}";
-    public static final String REMOVE_TASK = "/delete-task/{taskId}/by/{taskCategoryId}";
+    public static final String FETCH_TASK_BY_TASK_ID = "/{taskId}/category/{taskCategoryId}";
+    public static final String REMOVE_TASK_CATEGORY_BY_ID = "/{taskCategoryId}";
+    public static final String REMOVE_TASK = "/{taskId}/category/{taskCategoryId}";
   }
 
   final class ControllerMapping {
@@ -26,7 +26,7 @@ public interface Constants {
     public static final String USER = "/user";
     public static final String ADMIN = "/admin";
     public static final String ACCESS = "/access";
-    public static final String TASKS = "/task";
+    public static final String TASKS = "/tasks";
     public static final String TASK_CATEGORY = "/task-category";
   }
 

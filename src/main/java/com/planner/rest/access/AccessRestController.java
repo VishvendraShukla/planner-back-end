@@ -58,9 +58,10 @@ public class AccessRestController {
   }
 
   @PostMapping(SIGN_UP)
-  public ResponseEntity<Response> signup(@RequestBody SignupVO signupVO,HttpServletRequest request) {
+  public ResponseEntity<Response> signup(@RequestBody SignupVO signupVO,
+      HttpServletRequest request) {
     logger.info(signupVO.toString() + " with logId={}", request.getAttribute("logId"));
-//    userService.signUp(signupVO);
+    userService.signUp(signupVO);
     return RestAPIResponse.successResponse("Successfully signed up!");
   }
 
